@@ -3,7 +3,7 @@
   "author": "Joshua Jung <joshua.p.jung@gmail.com>",
   "license": "MIT",
   "description": "A stupid-simple dummy data generator that is configured with a simple JSON specification.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "url": "https://github.com/joshjung/dummy-data",
   "homepage": "https://github.com/joshjung/dummy-data",
@@ -11,7 +11,7 @@
   "dependencies": {
     "bluebird": "^2.3.10",
     "hasharray": "^0.2.3",
-    "jclass": "^1.0.1"
+    "jclass": "^1.1.0"
   },
   "repository": {
     "type": "git",

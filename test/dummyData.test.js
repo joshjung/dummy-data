@@ -59,6 +59,19 @@ describe('Dummy', function() {
 		});
 	});
   
+	describe('should work with generateLater()', function() {
+    var personSpec = require('./specifications/core.json');
+
+		it(' should callback with valid object', function(done) {
+      Dummy.generateLater(100, personSpec).then(function (dummyData) {
+        assert.equal(typeof dummyData.name, 'string');
+        assert.equal(typeof dummyData.age, 'number');
+        assert.equal(typeof dummyData.height, 'number');
+        done();
+      });
+		}, 110);
+	});
+  
 	describe('should work with Object spec and property token replacements', function() {
     var personSpec = require('./specifications/core.tokens.json'),
       tokens = {

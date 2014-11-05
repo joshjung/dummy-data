@@ -1,7 +1,8 @@
 /*===========================================================================*\
  * Requires
 \*===========================================================================*/
-var JClass = require('jclass');
+var JClass = require('jclass'),
+  Promise = require('bluebird');
 
 function conthunktor(Constructor) {
   var args = Array.prototype.slice.call(arguments, 1);
@@ -169,5 +170,12 @@ var DummyExport = module.exports = {
   tokenize: tokenize,
   generate: function (specification, props, count) {
     return (new Dummy()).generate(specification, props, count);
+  },
+  generateLater: function (timeout, specification, props, count) {
+    return new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        resolve(DummyExport.generate(specification, props, count));
+      }, timeout);
+    });
   }
 }

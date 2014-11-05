@@ -91,12 +91,15 @@ var TYPES = {
       spec.min = spec.min || 1.0;
       spec.max = spec.max || 100.0;
 
+      if (!spec.childSpec)
+        throw Error('If you use the \'Array\' type you must specify a \'childSpec\' type definition for the array\'s elements.');
+
       var c = integer(spec.min, spec.max),
         ret = [];
 
       for (var i = 0; i < c; i++)
       {
-        ret.push(DummyExport.gen(spec, props));
+        ret.push(DummyExport.generate(spec.childSpec, props));
       }
       
       return ret;
@@ -127,7 +130,6 @@ function tokenize(strOrObj, props) {
 	{
     var regEx = regExDict[key] || (regExDict[key] = (typeof props[key] == 'string' ? new RegExp('\\$\\{' + key + '\\}?', 'g') : new RegExp('\\"?\\$\\{' + key + '\\}\\"?', 'g')));
 		ret = ret.replace(regEx, props[key]);
-    console.log(ret);
 	}
 
 	return ret;

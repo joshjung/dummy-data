@@ -83,8 +83,7 @@ describe('Dummy', function() {
         maxDate: "1990/01/01 00:01:00"
       },
       dummyData = Dummy.generate(personSpec, tokens);
-
-      console.log(dummyData);
+      
 		it(' should map basic Integer (age)', function() {
 			assert.equal(typeof dummyData.age, 'number');
 		});
@@ -132,6 +131,24 @@ describe('Dummy', function() {
 
 		it(' should map core to array with length of 10', function() {
 			assert.equal(dummyData.length, 10);
+		});
+
+		it(' should make each child the right object', function() {
+      for (var i = 0; i < dummyData.length; i++)
+      {
+        assert.equal(typeof dummyData[i].name, 'string');
+        assert.equal(typeof dummyData[i].age, 'number');
+        assert.equal(typeof dummyData[i].height, 'number');
+      }
+		});
+	});
+  
+	describe('should work with Array spec and min/max', function() {
+    var arraySpec = require('./specifications/array.json'),
+      dummyData = Dummy.generate(arraySpec);
+
+		it(' should map to array', function() {
+			assert(dummyData.length);
 		});
 
 		it(' should make each child the right object', function() {

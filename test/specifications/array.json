@@ -1,8 +1,8 @@
 {
-  "type": "array",
+  "type": "Array",
   "max": 100,
   "min": 1,
-  "child": {
+  "childSpec": {
     "name": "String",
     "age": {
       "type": "Integer",

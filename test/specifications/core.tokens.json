@@ -1,0 +1,19 @@
+{
+  "name": "String",
+  "age": {
+    "type": "Integer",
+    "max": "${maxAge}",
+    "min": "${minAge}"
+  },
+  "height": {
+    "type": "Number",
+    "max": "${maxHeight}",
+    "min": "${minHeight}"
+  },
+  "dob": {
+    "type": "Date",
+    "min": "${maxDate}",
+    "max": "${minDate}"
+  },
+  "address": "String"
+}

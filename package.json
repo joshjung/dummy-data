@@ -11,7 +11,8 @@
   "dependencies": {
     "bluebird": "^2.3.10",
     "hasharray": "^0.3.0",
-    "jclass": "^1.1.0"
+    "jclass": "^1.1.0",
+    "lodash": "^2.4.1"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
     "mock",
     "data",
     "generator"
-  ]
+  ],
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  }
 }

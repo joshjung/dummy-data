@@ -179,5 +179,6 @@ var DummyExport = module.exports = {
         resolve(DummyExport.generate(specification, props, count));
       }, timeout);
     });
-  }
-}
+  },
+  degenerate: require('./DummyDataDegenerateRefactored.js')
+};

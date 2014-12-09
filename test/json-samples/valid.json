@@ -1,0 +1,7 @@
+{
+  "name"  : "Alex",
+  "place" : "Chicago",
+  "data"  : {
+    "ingredients" : [ "carrots", "onions", "celery" ]
+  }
+}

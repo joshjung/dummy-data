@@ -180,5 +180,5 @@ var DummyExport = module.exports = {
       }, timeout);
     });
   },
-  degenerate: require('./DummyDataDegenerateRefactored.js')
+  degenerate: require('./DummyDataDegenerate.js')
 };

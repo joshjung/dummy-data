@@ -37,6 +37,28 @@ Example (nested objects)
 
     var dummy = require('dummy-data');
 
+    var spec = {
+      name: {
+        first: "String",
+        last: "String"
+      },
+      address: {
+        street1: "String",
+        street2: "String",
+        city: "String",
+        state: "String",
+        zip: "String"
+      },
+      email: "String"
+    };
+
+    var customer = dummy.generate(spec);
+
+Example (nested objects in array)
+=================================
+
+    var dummy = require('dummy-data');
+
     // Produce an array of 20-100 customer objects.
     var spec = {
       type: "Array",
@@ -56,28 +78,6 @@ Example (nested objects)
         },
         email: "String"
       }
-    };
-
-    var customer = dummy.generate(spec);
-
-Example (nested objects in array)
-=================================
-
-    var dummy = require('dummy-data');
-
-    var spec = {
-      name: {
-        first: "String",
-        last: "String"
-      },
-      address: {
-        street1: "String",
-        street2: "String",
-        city: "String",
-        state: "String",
-        zip: "String"
-      },
-      email: "String"
     };
 
     var customer = dummy.generate(spec);

@@ -37,7 +37,7 @@ var integer = function (min, max) {
 }
 
 var getType = function (spec) {
-  var type = TYPES[spec.type];
+  var type = TYPES[spec.type || 'Object'];
 
   if (!type)
     throw Error('Invalid type in specification: ' + spec.type + '. Valid types are: String, Number, Integer, Array, Date, or Object');

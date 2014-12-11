@@ -11,28 +11,76 @@ Example (basic)
     var dummy = require('dummy-data');
 
     var spec = {
-      {
-        name: "String",
-        age: {
-          type: "Integer",
-          max: 110,
-          min: 0
-        },
-        height: {
-          type: "Number",
-          max: 9,
-          min: 0
-        },
-        address: "String",
-        date: {
-          type: "Date",
-          min: new Date(1960, 0),
-          max: new Date()
-        }
+      name: "String",
+      age: {
+        type: "Integer",
+        max: 110,
+        min: 0
+      },
+      height: {
+        type: "Number",
+        max: 9,
+        min: 0
+      },
+      address: "String",
+      date: {
+        type: "Date",
+        min: new Date(1960, 0),
+        max: new Date()
       }
     };
 
     var person = dummy.generate(spec);
+
+Example (nested objects)
+========================
+
+    var dummy = require('dummy-data');
+
+    // Produce an array of 20-100 customer objects.
+    var spec = {
+      type: "Array",
+      min: 20,
+      max: 100,
+      childSpec: {
+        name: {
+          first: "String",
+          last: "String"
+        },
+        address: {
+          street1: "String",
+          street2: "String",
+          city: "String",
+          state: "String",
+          zip: "String"
+        },
+        email: "String"
+      }
+    };
+
+    var customer = dummy.generate(spec);
+
+Example (nested objects in array)
+=================================
+
+    var dummy = require('dummy-data');
+
+    var spec = {
+      name: {
+        first: "String",
+        last: "String"
+      },
+      address: {
+        street1: "String",
+        street2: "String",
+        city: "String",
+        state: "String",
+        zip: "String"
+      },
+      email: "String"
+    };
+
+    var customer = dummy.generate(spec);
     
 Example (w/count)
 =================
